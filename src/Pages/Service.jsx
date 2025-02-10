@@ -9,14 +9,22 @@ const Service = () => {
     const [services, setServices] = useState([])
     const [search, setSearch] = useState('')
     const [filter, setFilter] = useState('')
+    const [sort, setSort] = useState([])
 
     useEffect(() => {
         const fetchAllService = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/allService?filter=${filter}&search=${search}`)
+            setSort(data)
             setServices(data)
         }
         fetchAllService()
     }, [filter, search])
+
+    const handleSort = () => {
+        const sortBy = [...services].sort((a, b) => b.price - a.price);
+        setSort(sortBy);
+    }
+
 
     return (
         <div className="mb-10 min-h-[calc(100vh-306px)]">
@@ -24,20 +32,17 @@ const Service = () => {
                 <title>ALL-SERVICE</title>
             </Helmet>
             <h3 className="text-white text-3xl font-bold text-center">All Services</h3>
-            <div className="mb-5 lg:flex md:flex lg:justify-between md:justify-between space-y-3">
-                <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
+            <div className="mb-5 lg:flex md:flex items-center lg:justify-between md:justify-between space-y-3">
+                <div className="space-x-5">
                     <input
-                        className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                        className='input input-bordered max-w-xs text-gray-700 placeholder-gray-500 bg-white'
                         type='text'
                         name='search'
                         onChange={e => setSearch(e.target.value)}
                         value={search}
-                        placeholder='Enter Service Title'
-                        aria-label='Enter Service Title'
+                        placeholder='Search Service Title'
                     />
-                    <button className='px-11 md:px-4 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
-                        Search
-                    </button>
+                    <button onClick={handleSort} className="btn rounded-md bg-white text-black">Sort By Price</button>
                 </div>
                 <div>
                     <select
@@ -62,7 +67,7 @@ const Service = () => {
             </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                 {
-                    services.map(service => <Card key={service._id} service={service}></Card>)
+                    sort.map(service => <Card key={service._id} service={service}></Card>)
                 }
             </div>
         </div>
