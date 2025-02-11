@@ -5,11 +5,20 @@ import { FaRegRegistered } from "react-icons/fa6";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { MdLogout } from "react-icons/md";
+import React from "react";
+import { IoMoon } from "react-icons/io5";
+import { IoSunny } from "react-icons/io5";
 
 
 const Navbar = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
+    const [dark, setDark] = React.useState(false);
+
+    const darkModeHandler = () => {
+        setDark(!dark);
+        document.body.classList.toggle("dark");
+    }
 
     return (
         <div className="flex justify-between items-center backdrop-blur bg-white/10 py-2 lg:px-14">
@@ -69,6 +78,15 @@ const Navbar = () => {
                         <Link to="/register" className="btn bg-white text-black">Register <FaRegRegistered className="text-xl" /></Link>
                     </div>
                 }
+                <button onClick={() => darkModeHandler()}>
+                    {
+
+                        dark && <IoSunny className="text-4xl text-blue-700" />
+                    }
+                    {
+                        !dark && <IoMoon className="text-4xl text-blue-700" />
+                    }
+                </button>
             </div>
         </div>
     );
