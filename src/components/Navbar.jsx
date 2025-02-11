@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center backdrop-blur bg-white/10 py-2 lg:px-14">
             <div className="flex space-x-3 items-center">
                 <div className="hidden lg:flex">
-                    <h3 className="text-white text-xl font-bold">WORK-<span className="text-[#28e6419c]">SERVICE</span></h3>
+                    <h3 className="text-blue-700 text-xl font-bold">WORK-<span className="text-[#12d32ce5]">SERVICE</span></h3>
                 </div>
                 <div className="dropdown lg:hidden md:hidden flex">
                     <div tabIndex={0} role="button"><HiMenuAlt1 className='text-3xl text-white' /></div>
@@ -51,17 +51,17 @@ const Navbar = () => {
             </div>
             <div>
                 <div className="lg:flex md:flex hidden space-x-4 text-white font-bold">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/service">Services</NavLink>
+                    <NavLink to="/" className="text-blue-700">Home</NavLink>
+                    <NavLink to="/service" className="text-blue-700">Services</NavLink>
                     {
-                        user && <NavLink to="/addservice">Add Service</NavLink>
+                        user && <NavLink to="/addservice" className="text-blue-700">Add Service</NavLink>
                     }
 
                     {
-                        user && <NavLink to="/myreview">My Reviews</NavLink>
+                        user && <NavLink to="/myreview" className="text-blue-700">My Reviews</NavLink>
                     }
                     {
-                        user && <NavLink to="/myservice">My Services</NavLink>
+                        user && <NavLink to="/myservice" className="text-blue-700">My Services</NavLink>
                     }
                 </div>
             </div>
@@ -72,10 +72,10 @@ const Navbar = () => {
                     }
                 </div>
                 {
-                    user && user?.email ? <button onClick={logoutUser} className="btn bg-white text-black">Logout<MdLogout className="text-xl"
+                    user && user?.email ? <button onClick={logoutUser} className="btn bg-white text-black border-2 border-black">Logout<MdLogout className="text-xl"
                     /></button> : <div className="space-x-2">
-                        <Link to="/login" className="btn bg-white text-black">Login <TbLogin2 className="text-xl" /></Link>
-                        <Link to="/register" className="btn bg-white text-black">Register <FaRegRegistered className="text-xl" /></Link>
+                        <Link to="/login" className="btn bg-white text-black border-2 border-black">Login <TbLogin2 className="text-xl" /></Link>
+                        <Link to="/register" className="btn bg-white text-black border-2 border-black">Register <FaRegRegistered className="text-xl" /></Link>
                     </div>
                 }
                 <button onClick={() => darkModeHandler()}>

@@ -57,22 +57,17 @@ const Myservices = () => {
             <Helmet>
                 <title>MY-SERVICES</title>
             </Helmet>
-            <h3 className="text-white text-3xl font-bold text-center">My Services</h3>
+            <h3 className="text-blue-700 text-3xl font-bold text-center">My Services</h3>
             <table className="table">
                 {/* head */}
                 <thead>
                     <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <th className="text-white">Email</th>
-                        <th className="text-white">Service Title</th>
-                        <th className="text-white">Price</th>
-                        <th className="text-white">Description</th>
-                        <th className="text-white">Update</th>
-                        <th className="text-white">Delete</th>
+                        <th className="text-gray-500">Email</th>
+                        <th className="text-gray-500">Service Title</th>
+                        <th className="text-gray-500">Price</th>
+                        <th className="text-gray-500">Description</th>
+                        <th className="text-gray-500">Update</th>
+                        <th className="text-gray-500">Delete</th>
                     </tr>
                 </thead>
                 <tbody>

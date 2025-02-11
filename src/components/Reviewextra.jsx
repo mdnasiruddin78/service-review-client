@@ -9,41 +9,36 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-const Reviewextra = ({ reviews,modernDelete }) => {
+const Reviewextra = ({ reviews, modernDelete }) => {
 
-    const {_id,review,ratings,title,reviewDate} = reviews;
+    const { _id, review, ratings, title, reviewDate } = reviews;
 
     const [rating, setRating] = useState(ratings)
     const [startDate, setStartDate] = useState(new Date(reviewDate));
     const { user } = useContext(AuthContext)
 
-    const handleUpdateReview = async (e,_id) => {
+    const handleUpdateReview = async (e, _id) => {
         e.preventDefault()
         const from = e.target;
         const email = from.email.value;
         const reviewDate = startDate;
         const review = from.review.value;
         const ratings = rating;
-        const updateReview = { email, review,reviewDate, ratings }
+        const updateReview = { email, review, reviewDate, ratings }
         // console.log(updateReview)
-    
+
         try {
-          const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/reviewUpdate/${_id}`, updateReview)
-        //   console.log(data)
-          toast.success('Review Update Successfully!!')
+            const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/reviewUpdate/${_id}`, updateReview)
+            //   console.log(data)
+            toast.success('Review Update Successfully!!')
         } catch (err) {
-        //   console.log(err)
-          toast.error(err.message)
+            //   console.log(err)
+            toast.error(err.message)
         }
-      }
+    }
 
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
@@ -54,21 +49,21 @@ const Reviewextra = ({ reviews,modernDelete }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold text-white">{user?.displayName}</div>
+                        <div className="font-bold text-gray-500">{user?.displayName}</div>
                         <div className="font-bold text-gray-500">{user?.email}</div>
                     </div>
                 </div>
             </td>
-            <td className="text-white">
+            <td className="text-gray-500 font-bold">
                 {reviews?.reviewDate
                     && format(new Date(reviewDate
                     ), 'P')}
             </td>
-            <td className="text-white">
+            <td className="text-gray-500 font-bold">
                 {title}
             </td>
-            <td className="text-white">{ratings}</td>
-            <td className="text-white">{review}</td>
+            <td className="text-gray-500 font-bold">{ratings}</td>
+            <td className="text-gray-500 font-bold">{review}</td>
             <td>
                 <button onClick={() => document.getElementById(_id).showModal()} className="btn btn-ghost text-2xl text-blue-500"><FaEdit /></button>
             </td>
@@ -79,7 +74,7 @@ const Reviewextra = ({ reviews,modernDelete }) => {
             <dialog id={_id} className="modal">
                 <div className="modal-box w-11/12 max-w-5xl">
                     <div className="card bg-white w-full rounded-xl">
-                        <form onSubmit={(e) => handleUpdateReview(e,_id)} method="dialog" className="card-body">
+                        <form onSubmit={(e) => handleUpdateReview(e, _id)} method="dialog" className="card-body">
                             <div className='flex flex-col lg:flex-row gap-5'>
                                 <div className="form-control flex-1">
                                     <label className="label">

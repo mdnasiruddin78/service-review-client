@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .active{
-    border-bottom: 2px solid white !important;
+    border-bottom: 2px solid blue !important;
 }
 
 html{

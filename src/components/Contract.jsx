@@ -9,30 +9,30 @@ const Contract = () => {
 
     return (
         <div>
-            <h3 className="text-white text-3xl text-center font-bold mb-5">Contract Us</h3>
+            <h3 className="text-blue-700 text-3xl text-center font-bold mb-5">Contract Us</h3>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
                 <div className="space-y-5">
                     <div className="flex items-center space-x-2">
-                        <FaInternetExplorer className="text-white text-xl" />
-                        <h3 className="text-white text-xl font-bold">Company Name: WORK-SERVICE</h3>
+                        <FaInternetExplorer className="text-blue-700 text-xl" />
+                        <h3 className="text-blue-700 text-xl font-bold">Company Name: WORK-SERVICE</h3>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <FaPhoneVolume className="text-white text-xl" />
-                        <p className="text-white text-xl font-bold">Mobile: +0018439875323</p>
+                        <FaPhoneVolume className="text-blue-700 text-xl" />
+                        <p className="text-blue-700 text-xl font-bold">Mobile: +0018439875323</p>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <HiOutlineMail className="text-white text-xl" />
-                        <p className="text-white text-xl font-bold">Email: workservice12@gmail.com</p>
+                        <HiOutlineMail className="text-blue-700 text-xl" />
+                        <p className="text-blue-700 text-xl font-bold">Email: workservice12@gmail.com</p>
                     </div>
                 </div>
                 <div className="space-y-5">
                     <div className="space-y-3">
-                        <h3 className="text-white text-xl font-bold">Our-Company: Arwaded has been in 2022-2023 year best online
+                        <h3 className="text-blue-700 text-xl font-bold">Our-Company: Arwaded has been in 2022-2023 year best online
                             service company in social online world</h3>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <FaLocationDot className="text-white text-xl" />
-                        <p className="text-white text-xl font-bold">
+                        <FaLocationDot className="text-blue-700 text-xl" />
+                        <p className="text-blue-700 text-xl font-bold">
                             Company Office: New-Market,road 12/14,Chittagong,Bangladesh!
                         </p>
                     </div>

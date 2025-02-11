@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 
 const Mainlayout = () => {
     return (
-        <div className="bg-white dark:bg-[#0f0f0f]">
+        <div className="bg-white dark:bg-black">
             <nav className='sticky top-0 z-50'>
                 <Navbar></Navbar>
             </nav>

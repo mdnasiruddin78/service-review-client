@@ -47,9 +47,9 @@ const Addservice = () => {
                 <title>ADD-SERVICE</title>
             </Helmet>
             <div className="text-center mb-3">
-                <h1 className="text-2xl font-bold text-white">Add Service</h1>
+                <h1 className="text-2xl font-bold text-blue-700">Add Service</h1>
             </div>
-            <div className="card bg-white w-full rounded-xl">
+            <div className="card bg-white w-full rounded-xl border-2 border-black">
                 <form onSubmit={handleAddService} className="card-body">
                     {/* form first row */}
                     <div className='flex flex-col lg:flex-row gap-5'>

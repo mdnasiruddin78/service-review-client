@@ -8,7 +8,7 @@ import image5 from '../assets/mark5.jpeg';
 const FaqGallery = () => {
     return (
         <div>
-            <h3 className="text-white text-3xl text-center font-bold mb-5">Faq & Gallery</h3>
+            <h3 className="text-blue-700 text-3xl text-center font-bold mb-5">Faq & Gallery</h3>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
                 <div>
                     <Marquee className='rounded-xl' pauseOnHover={true}>

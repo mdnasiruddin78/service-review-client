@@ -15,7 +15,7 @@ const Myserviceextra = ({ service, modernDelete }) => {
     const [startDate, setStartDate] = useState(new Date(date));
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
-    const [categorys,setCategorys] = useState(category)
+    const [categorys, setCategorys] = useState(category)
 
     const handleUpdateService = async (e, id) => {
         e.preventDefault()
@@ -45,11 +45,6 @@ const Myserviceextra = ({ service, modernDelete }) => {
 
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
@@ -60,18 +55,18 @@ const Myserviceextra = ({ service, modernDelete }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold text-white">{user?.email}</div>
-                        <div className="text-sm opacity-50 text-white">{service?.date && format(new Date(date), 'P')}</div>
+                        <div className="font-bold text-gray-500">{user?.email}</div>
+                        <div className="text-sm opacity-50 text-gray-500 font-bold">{service?.date && format(new Date(date), 'P')}</div>
                     </div>
                 </div>
             </td>
-            <td className="text-white">
+            <td className="text-gray-500 font-bold">
                 {title}
                 <br />
                 <span className="badge badge-ghost badge-sm">{company}</span>
             </td>
-            <td className="text-white">{price}</td>
-            <td className="text-white">{description.substring(0, 20)}...</td>
+            <td className="text-gray-500 font-bold">${price}</td>
+            <td className="text-gray-500 font-bold">{description.substring(0, 20)}...</td>
             <td>
                 <button onClick={() => document.getElementById(_id).showModal()} className="btn btn-ghost text-2xl text-blue-500"><FaEdit /></button>
             </td>

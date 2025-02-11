@@ -13,7 +13,7 @@ const Myreviews = () => {
   const { user } = useContext(AuthContext)
   const [review, setReview] = useState([])
 
-  
+
   const fetchAllReview = async () => {
     const { data } = await axiosSecure.get(`/allReviews/${user?.email}`)
     setReview(data)
@@ -35,7 +35,7 @@ const Myreviews = () => {
       toast.error(err.message)
     }
   }
-  
+
   const modernDelete = (id) => {
     toast(
       (t) => (
@@ -58,31 +58,26 @@ const Myreviews = () => {
       <Helmet>
         <title>MY-REVIEWS</title>
       </Helmet>
-      <h3 className="text-white text-2xl font-bold text-center mb-5">My Reviews</h3>
+      <h3 className="text-blue-700 text-2xl font-bold text-center mb-5">My Reviews</h3>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th className="text-white">Name</th>
-              <th className="text-white">Date</th>
-              <th className="text-white">Service Title</th>
-              <th className="text-white">Rating</th>
-              <th className="text-white">Review</th>
-              <th className="text-white">Update</th>
-              <th className="text-white">Delete</th>
+              <th className="text-gray-500">Name</th>
+              <th className="text-gray-500">Date</th>
+              <th className="text-gray-500">Service Title</th>
+              <th className="text-gray-500">Rating</th>
+              <th className="text-gray-500">Review</th>
+              <th className="text-gray-500">Update</th>
+              <th className="text-gray-500">Delete</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
             {
               review.map(reviews => <Reviewextra key={reviews._id} reviews={reviews}
-               modernDelete={modernDelete}></Reviewextra>)
+                modernDelete={modernDelete}></Reviewextra>)
             }
           </tbody>
           {/* foot */}
