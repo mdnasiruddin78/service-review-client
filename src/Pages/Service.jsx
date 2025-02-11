@@ -48,7 +48,7 @@ const Service = () => {
                     <select
                         name='category'
                         id='category'
-                        className='border p-4 rounded-lg'
+                        className='select select-bordered'
                         onChange={e => setFilter(e.target.value)}
                         value={filter}
                     >
